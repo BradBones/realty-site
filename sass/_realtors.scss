@@ -10,12 +10,27 @@
     justify-items: center;
     grid-row-gap: 2rem;
 
+    @media only screen and (max-width: $bp-medium) {
+        // Pushes realtors to the bottom of the main header content at 800px screen width
+        grid-column: 1 / -1;
+    }
+
     &__list {
         display: grid;
         grid-template-columns: min-content max-content;
         grid-column-gap: 2rem;
         grid-row-gap: 5vh;
         align-items: center;
+
+        @media only screen and (max-width: $bp-medium) {
+            // Puts realtors in a horizontal layout at 800px screen width
+            grid-template-columns: repeat(3, min-content max-content);
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            // Puts realtors back to a vertical layout at 600px screen width
+            grid-template-columns: min-content max-content;
+        }
     }
 
     &__img {

@@ -8,7 +8,6 @@
     padding: 4rem 8rem 8rem 8rem;
     
 
-
     display: grid;
     grid-template-rows: 1fr min-content minmax(6rem, min-contnent) 1fr; // Remember that section row is specified as 80vh in the .container class of the grid layout in _base.scss - So we want to divide the remaining header content rows to fill the remaining space.
     grid-template-columns: minmax(min-content, max-content); 
@@ -16,6 +15,16 @@
     justify-content: center;
     
     
+    @media only screen and (max-width: $bp-medium) {
+        // Pushes realtors to the bottom of the main header content at 800px screen width
+        grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        // Reduces spacing between realtors at 600px
+        padding: 5rem;
+    }
+
 
     &__logo {
         height: 3rem;
